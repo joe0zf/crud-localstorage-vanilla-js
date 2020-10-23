@@ -1,0 +1,152 @@
+*{
+    padding: 0px;
+    border:0px;
+    margin: 0px;
+}
+
+body{
+    background-color: #4CD9B4;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header img{
+
+    width: 150px;
+    height: 150px;
+}
+
+header div{
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+}
+
+/*Estilos para formulario*/
+
+.container-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.input-item{
+    display: flex;
+    flex-direction: column;
+}
+.input-item label{
+    font-size: 1.2em;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    color: white;
+}
+.input-item input{
+    padding: 3px;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.container-form form button{
+    width: 100%;
+    font-size: 1.3em;
+    padding:4px;
+    margin-top: 15px;
+    background-color: #75B73B;
+    border-radius: 5px;
+    color: white;
+}
+/*estilos de la lista de contactos*/
+
+.container{
+    margin-top:2em;
+    display: flex;
+    justify-content: center;
+}
+.container-contacts{
+    width: 80vw;
+    background-color: white;
+    padding: 1em;
+    border-radius: 20px 20px 0px 0px;
+    height: 400px;
+    overflow: scroll;
+}
+
+.container-person{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #4C7ED9;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+.container-person > img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.container-data{
+    margin-left: 1em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-data img{
+    width: 40px;
+    height: 50px;
+}
+.container-data div{
+    color: white;
+    font-size: 0.7em;
+}
+.container-data div:first-child{
+    font-size: 1em;
+}
+.container-data div:last-child{
+    font-style: italic;
+}
+
+@media screen and (min-width:900px){
+    header{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .container-logo{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .container-logo img{
+        width: 100px;
+        height: 100px;
+    }
+    .main-container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .container-form{
+        width: 45vw;
+        margin-top: 3em;
+    }
+    .container{
+        width: 45vw;
+    }
+    .input-item label{
+        font-size: 1.6em;
+    }
+    .input-item input{
+        font-size: 1.4em;
+        width: 100%;
+    }
+    .container-form form{
+        width: 80%;
+    }
+
+}
