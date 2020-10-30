@@ -15,6 +15,7 @@ guardar_btn.addEventListener('click',()=>{
     }
 
     personas.push(data)
+    
     guardar()
     listar()
 })
@@ -27,24 +28,67 @@ function guardar(){
 }
 
 function  listar(){
-    personas = []
-    personas = JSON.parse(localStorage.getItem('contactos'))
-    lista.innerHTML = ''
-    for(item of personas)
-    {
-        lista.insertAdjacentHTML('beforeend',`
-                <div class="container-person">
-                <img src="img/daciel.jpg" alt="avatar">
-                <div class="container-data">
-                    <div>
-                        <div>${item.nombre}</div>
-                        <div>${item.celular}</div>
-                        <div>${item.correo}</div>
+    try{
+        
+        if(!!JSON.parse(localStorage.getItem('contactos')))
+        {
+            personas = JSON.parse(localStorage.getItem('contactos'))
+        }
+        else{
+            personas = []
+        }
+        
+        personas.sort(function (a,b){
+            if(a.nombre > b.nombre)
+            {
+                return 1;
+            }
+            else if(a.nombre < b.nombre)
+            {
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        });
+        lista.innerHTML = ''
+        for(item of personas)
+        {
+            lista.insertAdjacentHTML('beforeend',`
+                    <div class="container-person">
+                    <img src="img/avatar.png" alt="avatar">
+                    <div class="container-data">
+                        <div class="datos">
+                            <div>${item.nombre}</div>
+                            <div>${item.celular}</div>
+                            <div>${item.correo}</div>
+                        </div>
+                        <img src="img/delete-icon.png" alt="delete" class="delete">
                     </div>
-                    <img src="img/delete-icon.png" alt="delete">
                 </div>
-            </div>
-        `)
+            `)
+        }
     }
+    catch(e){
+        console.log(e)
+    }
+    
 }
 listar()
+
+/*Eliminar elemento */
+
+lista.addEventListener('click',(event)=>{
+    if(event.target.matches('.delete'))
+    {
+        eliminar(event.target.previousElementSibling.lastElementChild.innerHTML)
+    }
+})
+
+function eliminar(c)
+{
+    let indicePersona = personas.findIndex(e=>e.correo == c)
+    let r =  personas.splice(indicePersona,1);
+    guardar()
+    listar();
+}
