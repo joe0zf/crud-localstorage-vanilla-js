@@ -96,9 +96,13 @@ header div{
     justify-content: space-between;
     align-items: center;
 }
-.container-data img{
-    width: 40px;
-    height: 50px;
+.container-data > div:nth-child(2){
+    margin-left: 2em;
+}
+.container-data span{
+    font-size: 3em;
+    border-radius: 50%;
+    cursor: pointer;
 }
 .container-data div{
     color: white;

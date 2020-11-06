@@ -63,7 +63,10 @@ function  listar(){
                             <div>${item.celular}</div>
                             <div>${item.correo}</div>
                         </div>
-                        <img src="img/delete-icon.png" alt="delete" class="delete">
+                        <div>
+                            <span class="mdi mdi-pencil" id="openModal"></span>
+                            <span class="mdi mdi-delete" id="delete"></span>
+                        </div>
                     </div>
                 </div>
             `)
@@ -79,9 +82,10 @@ listar()
 /*Eliminar elemento */
 
 lista.addEventListener('click',(event)=>{
-    if(event.target.matches('.delete'))
+    if(event.target.matches('#delete'))
     {
-        eliminar(event.target.previousElementSibling.lastElementChild.innerHTML)
+        //console.log(event.target.parentNode.previousElementSibling.lastElementChild.innerHTML)
+        eliminar(event.target.parentNode.previousElementSibling.lastElementChild.innerHTML)
     }
 })
 
@@ -92,3 +96,6 @@ function eliminar(c)
     guardar()
     listar();
 }
+
+
+
