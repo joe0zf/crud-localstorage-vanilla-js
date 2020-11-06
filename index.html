@@ -18,7 +18,7 @@
     </header>
     <div class="main-container">
         <div class="container-form">
-            <form action="#">
+            <form>
                 <div class="input-item">
                     <label for="nombre">Nombre</label><input type="text" id="nombre">
                 </div>
@@ -28,7 +28,7 @@
                 <div class="input-item">
                     <label for="correo">Correo</label><input type="email" id="correo">
                 </div>
-                <button type="submit" id="guardar-btn">Guardar</button>
+                <button type="submit" id="guardar-btn" >Guardar</button>
             </form>
         </div>
         <div class="container">
@@ -37,7 +37,31 @@
             </div>
         </div>
     </div>
+    <dialog id="editForm">
+            <div class="header-dialog">
+                <h1>Editar datos</h1>
+                <div>
+                    <button id="close-dialog">X</button>
+                </div>
+            </div>
+            
+            <div class="container-form-edit">
+                <form>
+                    <div class="input-item-edit">
+                        <label for="nombre">Nombre</label><input type="text" id="nombre-edit">
+                    </div>
+                    <div class="input-item-edit">
+                        <label for="celular">Celular</label><input type="tel" id="celular-edit">
+                    </div>
+                    <div class="input-item-edit">
+                        <label for="correo">Correo</label><input type="email" id="correo-edit" disabled>
+                    </div>
+                    <button id="guardar-edit-btn">Guardar</button>
+                </form>
+            </div>
 
+                    
+    </dialog> 
     
     <script src="js/script.js"></script>
 </body>

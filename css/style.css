@@ -115,6 +115,66 @@ header div{
     font-style: italic;
 }
 
+
+/*Estilos para el modal*/
+dialog{
+    width: 60%;
+    text-align: center;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+dialog::backdrop{
+    background-color: rgba(20, 20, 20, .6);
+}
+.dialog-container{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.container-form-edit{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+}
+.container-form-edit form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input-item-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.input-item-edit label{
+    color:#212121;
+}
+.input-item-edit input{
+    background-color: #a1a1a1;
+    font-size: 2em;
+}
+#guardar-edit-btn{
+    font-size: 1.4em;
+    background-color: teal;
+    color: white;
+    border-radius: 4px;
+    width: 40%;
+    margin-top:2em;
+    margin-bottom: 3em;
+}
+
+.header-dialog{
+    display: flex;
+    justify-content: space-between;
+    margin:10px;
+}
+.header-dialog div button{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
 @media screen and (min-width:900px){
     header{
         display: flex;
